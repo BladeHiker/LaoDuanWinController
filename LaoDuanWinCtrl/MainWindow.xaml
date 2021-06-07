@@ -1,0 +1,48 @@
+﻿<Window x:Class="Handle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Handle"
+        mc:Ignorable="d"
+        Title="老段窗口管理器" Height="327" Width="280" MinHeight="320" MinWidth="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="1.002,0.498" StartPoint="-0.024,0.502">
+                    <GradientStop Color="#678B03" Offset="0.027"/>
+                    <GradientStop Color="#A4C43D" Offset="0.948"/>
+                    <GradientStop Color="#ADCA54" Offset="0.969"/>
+                    <GradientStop Color="#A7C646" Offset="0.975"/>
+                    <GradientStop Color="#C9EF4C" Offset="0.994"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+            老段窗口管理器
+        </Label>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Padding="5" Margin="5 10" TextWrapping="NoWrap" Name="TextBox0" />
+            <Button Grid.Column="1" Margin="5 10" Click="Find">Find</Button>
+        </Grid>
+        <Label Grid.Row="2" HorizontalAlignment="Center" x:Name="InfoText">输入要控制的标题并查找</Label>
+        <WrapPanel Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button IsEnabled="{Binding Path=btnEnable}" Click="Min" Width="80" Height="50" Margin="10">最小化</Button>
+            <Button IsEnabled="{Binding Path=btnEnable}" Click="Show" Width="80" Height="50" Margin="10">显示</Button>
+            <Button IsEnabled="{Binding Path=btnEnable}" Click="Hide" Width="80" Height="50" Margin="10">隐藏</Button>
+            <Button IsEnabled="{Binding Path=btnEnable}" Click="Kill" Width="80" Height="50" Margin="10">关闭</Button>
+        </WrapPanel>
+        <!-- <Label Name="XYpos">XY</Label> -->
+        <!-- <Button Click="UpdatePos" Opacity="0.5">upd</Button> -->
+        <Label Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0">V2.1α By BladeHiker</Label>
+    </Grid>
+</Window>
